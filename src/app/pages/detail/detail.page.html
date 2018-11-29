@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-img [src]="person?.picture.large"></ion-img>
+  <p style="font-style:normal;">{{person?.name.title}} {{person?.name.first}} {{person?.name.last}}<br>
+  <strong>Email</strong>: {{person?.email}}<br>
+  <strong>Location</strong>: {{person?.location.city}} {{person?.location.state}}<br>
+  <strong>Nation</strong>: {{person?.nat}}<br>
+  <strong>Phone</strong>: {{person?.phone}}<br>
+  </p>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+</ion-content>

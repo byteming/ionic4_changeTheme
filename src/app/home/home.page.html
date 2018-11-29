@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+    <ion-searchbar animated [(ngModel)]="keyword" (ngModelChange)="onKeyworkChange($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-card *ngFor ="let person of persons" (click) = "openDetail(person)">
+   <ion-img [src] ="person.picture.large"></ion-img>
+   <ion-card-header>
+     <ion-card-title>{{person.name.title}} {{person.name.first}} {{person.name.last}}</ion-card-title>
+    
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{person.phone}}</p>
+    </ion-card-content>
+ </ion-card>
+ 
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-button (click)="shareToFB($event)" color ="light"><ion-icon name="git-network"></ion-icon> Share</ion-button>
+      
+    </ion-toolbar>
+  </ion-footer>
