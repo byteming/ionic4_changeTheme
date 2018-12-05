@@ -1,6 +1,7 @@
 import { Component, } from '@angular/core';
 import { MyServiceService} from './../services/my-service.service';
 import { NavController, AlertController } from '@ionic/angular';
+import { ThemeService} from '../theme.service'
 
 
 @Component({
@@ -15,8 +16,12 @@ export class HomePage {
 
   constructor(private navCtrl :NavController,
     private myService: MyServiceService,
-    private  alartCtrl: AlertController){
+    private  alartCtrl: AlertController,
+    public themeSwitcher: ThemeService
+    ){
       this.loadUser();
+      this.themeSwitcher.setTheme('day');
+      this.themeSwitcher.cycleTheme();
     }
 
     onKeyworkChange(e){

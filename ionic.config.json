@@ -1,5 +1,7 @@
 {
   "name": "HW28",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
